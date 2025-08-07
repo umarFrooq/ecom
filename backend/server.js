@@ -76,6 +76,12 @@ app.use('/api/contact', contactRoutes);
 const cartRoutes = require('./routes/cartRoutes');
 app.use('/api/cart', cartRoutes);
 
+const paymentRoutes = require('./routes/paymentRoutes');
+app.use('/api/payments', paymentRoutes);
+
+const webhookRoutes = require('./routes/webhookRoutes');
+app.use('/api/webhooks', webhookRoutes);
+
 // Upload routes
 const uploadRoutes = require('./routes/uploadRoutes');
 app.use('/api/v1/upload', uploadRoutes); // Using /api/v1 for versioning new routes

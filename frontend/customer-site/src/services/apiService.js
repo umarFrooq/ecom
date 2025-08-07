@@ -98,6 +98,19 @@ export const payOrder = (orderId, paymentData, token) => apiClient.put(`/orders/
   headers: { Authorization: `Bearer ${token}` }
 });
 
+// --- Payment Session APIs (Protected) ---
+export const createCheckoutSession = (data, token) => apiClient.post('/payments/checkout-session', data, {
+  headers: { Authorization: `Bearer ${token}` }
+});
+
+export const createEasypaisaSession = (data, token) => apiClient.post('/payments/easypaisa-session', data, {
+  headers: { Authorization: `Bearer ${token}` }
+});
+
+export const createJazzcashSession = (data, token) => apiClient.post('/payments/jazzcash-session', data, {
+  headers: { Authorization: `Bearer ${token}` }
+});
+
 
 // Add other API functions as needed (e.g., Cart APIs when ready)
 

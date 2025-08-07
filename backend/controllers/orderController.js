@@ -70,30 +70,10 @@ exports.createOrder = async (req, res, next) => {
 
     const createdOrder = await order.save();
 
-    // TODO: After order creation (and ideally after payment confirmation):
-    // 1. Decrease stock for each product in orderItems.
-    for (const item of createdOrder.orderItems) {
-        try {
-            await Product.findByIdAndUpdate(item.product, {
-                $inc: { stock: -item.quantity }
-            });
-        } catch (stockUpdateError) {
-            // This is problematic: order created but stock update failed.
-            // Requires compensation logic (e.g. mark order as problematic, notify admin, try to revert)
-            // For now, log the error. In a robust system, this needs careful handling.
-            console.error(`Failed to update stock for product ${item.product} in order ${createdOrder._id}:`, stockUpdateError);
-            // Potentially update order status to something like 'Pending Stock Validation'
-        }
-    }
+    // The stock decrement and cart clearing will now be handled
+    // in the webhook after a successful payment.
 
-    // 2. Clear the user's shopping cart (User model's cart)
-    const user = await User.findById(req.user.id);
-    if (user) {
-        user.cart = [];
-        await user.save();
-    }
-
-    res.status(201).json({ success: true, data: createdOrder });
+    res.status(201).json({ success: true, orderId: createdOrder._id });
   } catch (error) {
     next(error);
   }
@@ -135,20 +115,33 @@ exports.updateOrderToPaid = async (req, res, next) => {
       return next(new ErrorResponse(`Order not found with id of ${req.params.id}`, 404));
     }
 
-    // In a real scenario, paymentResult would come from the payment gateway
+    // This function will be called by the webhook handler
     order.isPaid = true;
     order.paidAt = Date.now();
-    order.paymentResult = { // Mocked payment result
-      id: req.body.paymentId || `mock_payment_${Date.now()}`,
-      status: req.body.status || 'succeeded',
-      update_time: req.body.update_time || Date.now().toString(),
-      email_address: req.body.email_address || req.user.email, // Payer's email
+    order.paymentResult = {
+      id: req.body.transactionId, // From payment gateway
+      status: 'succeeded',
+      update_time: Date.now().toString(),
+      email_address: req.user.email,
     };
-    // Potentially change orderStatus here too, e.g., to 'Processing' if it was 'Pending'
+
     if (order.orderStatus === 'Pending') {
         order.orderStatus = 'Processing';
     }
 
+    // Decrease stock for each product in orderItems
+    for (const item of order.orderItems) {
+        await Product.findByIdAndUpdate(item.product, {
+            $inc: { stock: -item.quantity }
+        });
+    }
+
+    // Clear the user's shopping cart
+    const user = await User.findById(order.user);
+    if (user) {
+        user.cart = [];
+        await user.save();
+    }
 
     const updatedOrder = await order.save();
 

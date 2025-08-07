@@ -5,7 +5,7 @@ import { Container, Row, Col, Form, Button, Card, ListGroup, Alert, Spinner } fr
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
-import { createOrder as apiCreateOrder } from '../services/apiService';
+import { createOrder as apiCreateOrder, createCheckoutSession, createEasypaisaSession, createJazzcashSession } from '../services/apiService';
 
 const CheckoutPage = () => {
   const { t, i18n } = useTranslation();
@@ -76,14 +76,45 @@ const CheckoutPage = () => {
     };
 
     try {
-      const response = await apiCreateOrder(orderData, token);
-      if (response.data && response.data.success) {
-        setStatus({ loading: false, error: null, success: t('checkoutPage.success.orderPlaced', { orderId: response.data.data._id }) });
-        await clearClientCart(); // Clear cart from context and backend
-        // Redirect to order confirmation page or account/orders
-        setTimeout(() => navigate(`/account/orders`), 5000); // Redirect after 5s
+      // Create the order in our database first
+      const orderResponse = await apiCreateOrder(orderData, token);
+
+      if (!orderResponse.data || !orderResponse.data.success) {
+        setStatus({ loading: false, error: orderResponse.data.message || t('checkoutPage.error.orderDefault'), success: null });
+        return;
+      }
+
+      const { orderId } = orderResponse.data;
+
+      // Now, handle the payment based on the selected method
+      if (paymentMethod === 'CashOnDelivery') {
+        setStatus({ loading: false, error: null, success: t('checkoutPage.success.orderPlaced', { orderId }) });
+        await clearClientCart();
+        setTimeout(() => navigate(`/account/orders`), 5000);
       } else {
-        setStatus({ loading: false, error: response.data.message || t('checkoutPage.error.orderDefault'), success: null });
+        // For other payment methods, create a payment session
+        let sessionResponse;
+        const paymentData = { orderId, amount: cartTotals.total, currency: 'SAR' }; // Example data
+
+        if (paymentMethod === 'Checkout') {
+          sessionResponse = await createCheckoutSession(paymentData, token);
+        } else if (paymentMethod === 'Easypaisa') {
+          sessionResponse = await createEasypaisaSession(paymentData, token);
+        } else if (paymentMethod === 'Jazzcash') {
+          sessionResponse = await createJazzcashSession(paymentData, token);
+        }
+
+        if (sessionResponse && sessionResponse.data.success) {
+          // Here you would redirect to the payment gateway's URL
+          // or use their SDK to show a payment form.
+          // For now, we'll just log the response.
+          console.log('Payment session created:', sessionResponse.data);
+          setStatus({ loading: false, error: null, success: 'Redirecting to payment...' });
+          // Example redirect:
+          // window.location.href = sessionResponse.data.redirectUrl;
+        } else {
+          setStatus({ loading: false, error: 'Could not initiate payment.', success: null });
+        }
       }
     } catch (err) {
       setStatus({ loading: false, error: err.error || err.message || t('checkoutPage.error.orderNetwork'), success: null });
@@ -172,16 +203,32 @@ const CheckoutPage = () => {
                   checked={paymentMethod === 'CashOnDelivery'}
                   onChange={handlePaymentMethodChange}
                 />
-                {/* Add other payment methods here, e.g., Credit Card via Stripe Elements */}
                 <Form.Check
                   type="radio"
-                  id="paymentCreditCard"
+                  id="paymentCheckout"
                   name="paymentMethod"
-                  value="CreditCard"
-                  label={t('checkoutPage.payment.creditCard')}
-                  checked={paymentMethod === 'CreditCard'}
+                  value="Checkout"
+                  label="Checkout.com"
+                  checked={paymentMethod === 'Checkout'}
                   onChange={handlePaymentMethodChange}
-                  disabled // Placeholder
+                />
+                <Form.Check
+                  type="radio"
+                  id="paymentEasypaisa"
+                  name="paymentMethod"
+                  value="Easypaisa"
+                  label="Easypaisa"
+                  checked={paymentMethod === 'Easypaisa'}
+                  onChange={handlePaymentMethodChange}
+                />
+                <Form.Check
+                  type="radio"
+                  id="paymentJazzcash"
+                  name="paymentMethod"
+                  value="Jazzcash"
+                  label="Jazzcash"
+                  checked={paymentMethod === 'Jazzcash'}
+                  onChange={handlePaymentMethodChange}
                 />
               </Form.Group>
             </Col>

@@ -24,6 +24,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CheckoutPage from './pages/CheckoutPage'; // Import CheckoutPage
+import PaymentStatusPage from './pages/PaymentStatusPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProtectedRoute from './components/Common/ProtectedRoute';
 
@@ -71,6 +72,7 @@ function App() {
             path="/checkout"
             element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>}
           />
+          <Route path="/payment-status" element={<PaymentStatusPage />} />
 
           <Route path="/account/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/account/reset-password/:token" element={<ResetPasswordPage />} />
