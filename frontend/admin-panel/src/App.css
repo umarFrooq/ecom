@@ -1,0 +1,66 @@
+/* Basic Admin App styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f6f8; /* Default background for admin areas */
+}
+
+.admin-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar basic styles (more specific styles are inline in App.js for this demo) */
+/*
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #adb5bd;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #495057;
+  color: white;
+}
+*/
+
+/* Main content basic styles */
+/*
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+*/
+
+/* Language switcher specific adjustments if needed for admin panel */
+/* For example, if it's placed in a different context */
+/* .admin-app .language-switcher { ... } */
+
+/* Ensure HTML and Body take full height for flexbox to work well if needed */
+html, body, #root, .admin-app {
+  height: 100%;
+}
+
+/* RTL specific styles if needed beyond body[dir="rtl"] */
+/*
+[dir="rtl"] .sidebar {
+  border-left: 1px solid #495057;
+  border-right: none;
+}
+*/

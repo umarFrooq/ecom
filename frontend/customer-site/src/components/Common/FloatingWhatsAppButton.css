@@ -1,0 +1,52 @@
+.floating-whatsapp-button {
+  position: fixed;
+  bottom: 25px;
+  /* Default to right, will adjust for RTL */
+  right: 25px;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  padding: 12px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.8rem; /* Icon size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's above other content */
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.floating-whatsapp-button:hover {
+  background-color: #1DA851; /* Darker green on hover */
+  transform: scale(1.05);
+}
+
+.floating-whatsapp-button .button-text {
+  font-size: 1rem; /* Text size */
+  margin-left: 8px; /* Space between icon and text */
+  font-weight: 500;
+}
+
+/* RTL adjustments */
+body[dir="rtl"] .floating-whatsapp-button {
+  right: auto;
+  left: 25px;
+}
+
+body[dir="rtl"] .floating-whatsapp-button .button-text {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* Hide text on smaller screens to make it just an icon button */
+@media (max-width: 768px) {
+  .floating-whatsapp-button {
+    padding: 10px 12px; /* Slightly smaller padding */
+    font-size: 1.5rem;
+  }
+  .floating-whatsapp-button .button-text {
+    display: none;
+  }
+}

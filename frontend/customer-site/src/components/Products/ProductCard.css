@@ -1,0 +1,83 @@
+.product-col { /* Ensures columns behave correctly with d-flex */
+    display: flex;
+}
+
+.product-card {
+  border: 1px solid #e9ecef; /* Lighter border */
+  border-radius: 0.375rem; /* Standard Bootstrap border-radius */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden; /* Ensures image respects border radius */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit; /* Inherit text color from parent */
+  display: flex; /* Make the link a flex container */
+  flex-direction: column; /* Stack image and body vertically */
+  height: 100%; /* Make the link take full height of the card */
+}
+
+.product-card-img {
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area, might crop */
+  border-bottom: 1px solid #e9ecef; /* Separator line */
+}
+
+.product-card .card-body {
+  padding: 1rem; /* Standard padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes price to bottom */
+}
+
+.product-card-title {
+  font-size: 1rem; /* Slightly smaller title */
+  font-weight: 600;
+  color: #212529; /* Bootstrap's default text color */
+  margin-bottom: 0.1rem;
+  /* Prevent title from taking too many lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(1rem * 1.5 * 2); /* Assuming line-height is 1.5, for 2 lines */
+}
+
+.product-card-description {
+  font-size: 0.875rem;
+  margin-bottom: 0.3rem;
+  /* Limit description lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(0.875rem * 1.5 * 3); /* Assuming line-height is 1.5, for 3 lines */
+}
+
+.product-card-footer {
+  padding-top: 0.75rem; /* Space above price */
+  /* border-top: 1px solid #e9ecef; /* Optional: line above price */
+}
+
+.product-price {
+  color: #007bff; /* Primary color for price */
+  font-weight: bold;
+}
+
+/* Ensure card link takes precedence for click over internal elements if any were buttons */
+.product-card .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}

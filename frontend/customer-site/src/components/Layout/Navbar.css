@@ -1,0 +1,178 @@
+/* General Navbar Styling */
+.global-navbar {
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #e0e0e0; /* Light grey border */
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Add some top padding to the body to offset the fixed navbar */
+body {
+  padding-top: 70px; /* Adjust based on actual navbar height */
+}
+
+.navbar-brand-custom {
+  font-weight: bold;
+  color: #333; /* Darker text for brand */
+  font-size: 1.5rem;
+}
+
+.global-navbar .nav-link {
+  color: #555555; /* Standard link color */
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.global-navbar .nav-link:hover,
+.global-navbar .nav-link.active {
+  color: #007bff; /* Primary color on hover/active */
+}
+
+/* Custom styling for the navbar toggle */
+.global-navbar .navbar-toggler {
+  border: none;
+  color: #007bff;
+}
+.global-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+
+/* Search Form */
+.search-form-custom .search-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: #ced4da;
+}
+.search-form-custom .search-input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.search-form-custom .search-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-color: #007bff;
+  background-color: #007bff;
+  color: white;
+}
+.search-form-custom .search-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+
+/* Icons styling */
+.icon-link {
+  color: #555555;
+  padding: 0.5rem;
+}
+.icon-link:hover {
+  color: #007bff;
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.1em 0.4em;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* User Dropdown */
+.user-dropdown .dropdown-menu {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+
+/* RTL Specific Adjustments */
+.global-navbar.rtl .main-nav-links {
+  margin-right: auto !important; /* Override Bootstrap's me-auto */
+  margin-left: 0 !important;
+}
+
+.global-navbar.rtl .secondary-nav-links {
+  margin-left: auto !important; /* Override Bootstrap's ms-auto if present */
+  margin-right: 0 !important;
+}
+
+.global-navbar.rtl .search-form-custom .search-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.25rem; /* Default Bootstrap radius */
+  border-bottom-right-radius: 0.25rem;
+}
+
+.global-navbar.rtl .search-form-custom .search-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.global-navbar.rtl .user-dropdown .dropdown-menu {
+  /* Ensure dropdown aligns correctly in RTL */
+  right: auto;
+  left: 0;
+}
+
+/* Ensure correct spacing for icons and text in RTL */
+.global-navbar.rtl .icon-link .d-lg-none {
+  margin-right: 0.5rem; /* For text next to icon on small screens */
+  margin-left: 0;
+}
+.global-navbar.ltr .icon-link .d-lg-none {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Adjust dropdown alignment for user menu specifically if needed */
+.global-navbar.rtl .user-dropdown[data-bs-popper] {
+    left: 0 !important; /* Forcing left alignment */
+    right: auto !important;
+}
+.global-navbar.ltr .user-dropdown[data-bs-popper] {
+    left: auto !important;
+    right: 0 !important; /* Forcing right alignment for LTR */
+}
+
+/* Small screen adjustments */
+@media (max-width: 991.98px) {
+  .global-navbar .main-nav-links .nav-link,
+  .global-navbar .secondary-nav-links .nav-link {
+    padding-left: 0.5rem; /* Add some padding for collapsed items */
+    padding-right: 0.5rem;
+  }
+  .global-navbar.rtl .main-nav-links .nav-link,
+  .global-navbar.rtl .secondary-nav-links .nav-link {
+    text-align: right;
+  }
+  .search-form-custom {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .user-dropdown, .cart-link {
+    width: 100%;
+    text-align: right; /* Or left for LTR */
+  }
+  .global-navbar.rtl .user-dropdown, .global-navbar.rtl .cart-link {
+    text-align: right;
+  }
+   .global-navbar.ltr .user-dropdown, .global-navbar.ltr .cart-link {
+    text-align: left;
+  }
+  .icon-link .fa-lg { /* Make icons a bit smaller on mobile if needed */
+    font-size: 1.1rem;
+  }
+}

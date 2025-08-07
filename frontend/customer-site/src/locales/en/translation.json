@@ -1,0 +1,345 @@
+{
+  "siteDescription": "Discover a wide range of quality home furnishings and textiles at Mafrushat Store. Explore our latest collections in English.",
+  "welcomeMessage": "Welcome to Mafrushat Store!",
+  "toggleLanguage": "Switch to Arabic",
+  "currentLanguage": "Current Language: English",
+  "companyName": "Al Manar Furnishings",
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "projects": "Our Projects",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "logoAlt": "Company Logo",
+    "searchPlaceholder": "Search for products...",
+    "account": "My Account",
+    "myAccount": "My Account",
+    "myOrders": "My Orders",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "privacyPolicy": "Privacy Policy",
+    "cart": "Cart",
+    "welcome": "Welcome"
+  },
+  "home": "Home",
+  "products": "Products",
+  "aboutUs": "About Us",
+  "contactUs": "Contact Us",
+  "searchPlaceholder": "Search for products...",
+  "contactInfo": {
+    "whatsappNumber": "966558494648"
+  },
+  "footer": {
+    "aboutTitle": "Al Manar Furnishings",
+    "aboutText": "Your ideal destination to renew your home with the finest quality furnishings that combine luxury and quality. We specialize in carpets, rugs, Arabic seating, and curtains.",
+    "contactTitle": "Contact Us",
+    "phone": "+966 558494648",
+    "address": "Riyadh, Al-Mansouriyyah, Manfuhah Riyadh 12685, Saudi Arabia",
+    "whatsappAria": "Contact us on WhatsApp",
+    "whatsapp": "WhatsApp",
+    "pagesTitle": "Pages",
+    "offersLink": "Special Offers",
+    "newsletterTitle": "Newsletter",
+    "newsletterText": "Subscribe to our newsletter for the latest updates and offers.",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "rightsReserved": "All rights reserved.",
+    "developedBy": "Developed by Ibrahim Abd Nasser"
+  },
+  "common": {
+    "loading": "Loading...",
+    "optional": "Optional",
+    "submitting": "Submitting..."
+  },
+  "pageTitles": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "shop": "Shop",
+    "login": "Login",
+    "register": "Create Account",
+    "cart": "Shopping Cart",
+    "checkout": "Checkout",
+    "projects": "Our Projects"
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "errorDefault": "Failed to load projects.",
+    "errorNetwork": "An error occurred while fetching projects.",
+    "loadingProjects": "Loading Projects...",
+    "errorPrefix": "Error",
+    "noProjects": "No projects found at the moment.",
+    "viewDetails": "View Details",
+    "dateLabel": "Date"
+  },
+  "shopPage": {
+    "title": "Shop",
+    "error": {
+      "fetchDefault": "Failed to load products.",
+      "fetchNetwork": "A network error occurred while fetching products."
+    },
+    "filters": {
+      "category": "Filter by Category:",
+      "allCategories": "All Categories",
+      "sortBy": "Sort By:",
+      "sortNewest": "Newest",
+      "sortPriceAsc": "Price: Low to High",
+      "sortPriceDesc": "Price: High to Low",
+      "sortPopularity": "Popularity",
+      "searchProducts": "Search Products:",
+      "searchPlaceholder": "Enter keyword..."
+    },
+    "loadingProducts": "Loading products...",
+    "noProductsFound": "No products found matching your criteria.",
+    "resultsCount": "Showing {{count}} of {{total}} products"
+  },
+  "loginPage": {
+    "title": "Login",
+    "form": {
+      "email": "Email or Username",
+      "password": "Password",
+      "loggingIn": "Logging in...",
+      "submitButton": "Login"
+    },
+    "forgotPasswordLink": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Create a new account"
+  },
+  "registerPage": {
+    "title": "Create New Account",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "errorPasswordMismatch": "Passwords do not match.",
+      "registering": "Registering...",
+      "submitButton": "Create Account"
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Login"
+  },
+  "cartPage": {
+    "loadingCart": "Loading your cart...",
+    "errorPrefix": "Error",
+    "title": "Shopping Cart",
+    "emptyCart": "Your cart is currently empty.",
+    "continueShoppingLink": "Continue Shopping",
+    "removeItemTitle": "Remove item",
+    "clearCartButton": "Clear Cart",
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "items": "items",
+      "shipping": "Shipping",
+      "freeShipping": "Free",
+      "tax": "Tax",
+      "total": "Total"
+    },
+    "checkoutButton": "Proceed to Checkout"
+  },
+  "productDetailPage": {
+    "error": {
+      "fetchDefault": "Product details could not be loaded.",
+      "fetchNetwork": "A network error occurred while fetching product details."
+    },
+    "loadingProduct": "Loading product details...",
+    "notFound": "Product not found.",
+    "categoryLabel": "Category",
+    "reviewsLink": "reviews",
+    "inStock": "In Stock",
+    "left": "left",
+    "outOfStock": "Out of Stock",
+    "quantity": "Quantity",
+    "addToCartButton": "Add to Cart",
+    "addedToCartSuccess": "{{quantity}} x {{productName}} added to cart!",
+    "continueShoppingButton": "Continue Shopping",
+    "checkoutButton": "Checkout",
+    "skuLabel": "SKU",
+    "tagsLabel": "Tags",
+    "reviews": {
+      "errorFetchDefault": "Could not load reviews.",
+      "errorFetchNetwork": "A network error occurred while fetching reviews.",
+      "title": "Customer Reviews",
+      "noReviews": "No reviews yet for {{productName}}.",
+      "anonymousUser": "Anonymous",
+      "cancelReviewButton": "Cancel Review",
+      "writeReviewButton": "Write a Review",
+      "alreadyReviewed": "You have already reviewed this product.",
+      "formTitle": "Write a Review",
+      "ratingLabel": "Rating",
+      "selectRating": "Select Rating...",
+      "starsExcellent": "Excellent",
+      "starsGood": "Good",
+      "starsAverage": "Average",
+      "starsFair": "Fair",
+      "starsPoor": "Poor",
+      "commentLabel": "Comment",
+      "submitSuccess": "Review submitted successfully!",
+      "submitErrorDefault": "Failed to submit review.",
+      "submitErrorNetwork": "A network error occurred while submitting your review.",
+      "errorRatingRequired": "Please select a rating.",
+      "submitButton": "Submit Review"
+    }
+  },
+  "aboutUsPage": {
+    "title": "About Us",
+    "paragraph1": "Welcome to Mafrushat Eurubat Almanar, your ideal destination for renewing your home with the finest types of furnishings that combine luxury and quality.",
+    "paragraph2": "Our store specializes in offering a diverse range of products including: carpets and rugs with modern and classic designs to suit all tastes and spaces, distinctive Arab majlis collections inspired by authentic Arab heritage, with details that combine comfort and luxury, and elegant curtains to decorate windows with fabrics and designs that add an elegant touch to every room.",
+    "paragraph3": "We are committed to providing the best quality and latest designs to meet our customers' aspirations for creating a comfortable and beautiful home environment. Our team is always ready to provide assistance and advice to help you choose what suits your taste and needs.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide high-quality home furnishings that blend traditional elegance with modern comfort, enhancing the beauty and functionality of every home.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be the leading name in home furnishings in the region, known for our exceptional quality, innovative designs, and customer-centric approach.",
+    "imageAlt": "Our Showroom"
+  },
+  "contactUsPage": {
+    "title": "Contact Us",
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "successDefault": "Your message has been sent successfully!",
+      "errorDefault": "Failed to send your message. Please try again.",
+      "errorNetwork": "A network error occurred. Please check your connection and try again.",
+      "sending": "Sending...",
+      "submitButton": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "intro": "If you need help, don't hesitate to contact us through the following channels:",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "addressLabel": "Our Location",
+      "hoursTitle": "Working Hours",
+      "hoursText": "Saturday - Thursday: 9:00 AM - 10:00 PM",
+      "fridayHoursText": "Friday: 2:00 PM - 10:00 PM",
+      "mapTitle": "Our Location on the Map"
+    }
+  },
+  "homePage": {
+    "heroTitle": "Latest Designs",
+    "heroSubtitle": "Al Manar Furnishings is your ideal destination to buy carpets, rugs, Arabic majlis, and curtains. High quality and distinctive designs to suit all tastes.",
+    "heroButton": "Shop Now!",
+    "qualityTitle": "High Quality",
+    "qualityText": "Superior quality ensures luxury and durability in every detail and material.",
+    "deliveryTitle": "Fast Delivery",
+    "deliveryText": "Fast and secure delivery ensures your orders arrive on time.",
+    "warrantyTitle": "Best Warranty",
+    "warrantyText": "Comprehensive warranty provides peace of mind and confidence in every purchase.",
+    "featuredProductsTitle": "Featured Products",
+    "featuredProductsErrorDefault": "Failed to load featured products.",
+    "featuredProductsErrorNetwork": "A network error occurred while fetching featured products.",
+    "noFeaturedProducts": "No featured products available at the moment.",
+    "viewAllProductsButton": "View All Products",
+    "offers": {
+      "majlisTitle": "Offers on Arabic Majlis",
+      "majlisText": "Special discount up to 70%. Discover the best Arabic Majlis offers at Al Manar Furnishings, where we offer designs that combine luxury and authenticity at competitive prices.",
+      "whatsappButton": "Contact via WhatsApp for Offers",
+      "majlisImageAlt": "Arabic Majlis Offer"
+    }
+  },
+  "home": {
+    "heroTitle": "Latest Designs",
+    "heroSubtitle": "Al Manar Furnishings is your ideal destination to buy carpets, rugs, Arabic majlis, and curtains. High quality and distinctive designs to suit all tastes.",
+    "heroButton": "Shop Now!",
+    "qualityTitle": "High Quality",
+    "qualityText": "Superior quality ensures luxury and durability in every detail and material.",
+    "deliveryTitle": "Fast Delivery",
+    "deliveryText": "Fast and secure delivery ensures your orders arrive on time.",
+    "warrantyTitle": "Best Warranty",
+    "warrantyText": "Comprehensive warranty provides peace of mind and confidence in every purchase.",
+    "featuredProductsTitle": "Featured Products",
+    "featuredProductsErrorDefault": "Failed to load featured products.",
+    "featuredProductsErrorNetwork": "A network error occurred while fetching featured products.",
+    "noFeaturedProducts": "No featured products available at the moment.",
+    "viewAllProductsButton": "View All Products",
+    "offers": {
+      "majlisTitle": "Offers on Arabic Majlis",
+      "majlisText": "Special discount up to 70%. Discover the best Arabic Majlis offers at Al Manar Furnishings, where we offer designs that combine luxury and authenticity at competitive prices.",
+      "whatsappButton": "Contact via WhatsApp for Offers",
+      "majlisImageAlt": "Arabic Majlis Offer"
+    }
+  },
+  "categoriesDisplay": {
+    "errorDefault": "Failed to load categories.",
+    "errorNetwork": "An error occurred while fetching categories.",
+    "loadingCategories": "Loading Categories...",
+    "errorPrefix": "Error",
+    "noCategories": "No categories found.",
+    "title": "Shop by Category",
+    "viewProducts": "View Products"
+  },
+  "checkoutPage": {
+    "title": "Checkout",
+    "error": {
+      "emptyCart": "Your cart is empty. Please add items before checking out.",
+      "orderDefault": "Failed to place your order. Please try again.",
+      "orderNetwork": "A network error occurred. Please check your connection and try again."
+    },
+    "success": {
+      "orderPlaced": "Order placed successfully! Order ID: {{orderId}}"
+    },
+    "shipping": {
+      "title": "Shipping Address",
+      "address": "Address",
+      "street": "Street",
+      "houseNumber": "House Number",
+      "city": "City",
+      "postalCode": "Postal Code",
+      "country": "Country",
+      "phone": "Phone Number"
+    },
+    "payment": {
+      "title": "Payment Method",
+      "cashOnDelivery": "Cash on Delivery",
+      "creditCard": "Credit Card (Not available yet)"
+    },
+    "summary": {
+      "title": "Your Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "freeShipping": "Free",
+      "tax": "Tax",
+      "total": "Total"
+    },
+    "placingOrder": "Placing Order...",
+    "placeOrderButton": "Place Order"
+  },
+  "accountPage": {
+    "welcome": "Welcome",
+    "redirectingToLogin": "Redirecting to login...",
+    "nav": {
+      "profile": "Profile",
+      "orders": "My Orders",
+      "addresses": "Addresses",
+      "logout": "Logout"
+    },
+    "profile": {
+      "title": "Profile Details",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "email": "Email",
+      "updateSuccess": "Profile updated successfully.",
+      "updateErrorNetwork": "A network error occurred. Please try again.",
+      "saving": "Saving...",
+      "saveButton": "Save Changes"
+    },
+    "orders": {
+      "title": "Order History",
+      "placeholder": "Your past orders will be listed here.",
+      "viewAllLink": "View All Orders"
+    },
+    "addresses": {
+      "title": "Manage Addresses",
+      "placeholder": "Your saved addresses will be shown here."
+    }
+  }
+}

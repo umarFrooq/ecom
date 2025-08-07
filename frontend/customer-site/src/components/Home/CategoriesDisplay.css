@@ -1,0 +1,58 @@
+.categories-display-section .section-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.category-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%; /* Ensure card takes full col width */
+  max-width: 280px; /* Max width for consistency */
+  overflow: hidden; /* Ensure image corners are rounded if card is */
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.category-card-img {
+  height: 180px; /* Fixed height for images */
+  object-fit: cover; /* Ensure image covers the area, might crop */
+}
+
+.category-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 0.75rem; /* Space below title */
+}
+
+.category-card .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.category-card .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Ensure cards in a row have equal height if content varies slightly */
+.categories-display-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.categories-display-section .col {
+  display: flex;
+  align-items: stretch; /* Makes cards in a row stretch to the same height */
+}
+
+.category-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom if title is short */
+}

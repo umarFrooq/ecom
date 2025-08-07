@@ -1,0 +1,28 @@
+.language-switcher {
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center; /* Example styling */
+  border-bottom: 1px solid #eee;
+}
+
+.language-switcher button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+
+.language-switcher button:disabled {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  cursor: not-allowed;
+}
+
+.language-switcher p {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}

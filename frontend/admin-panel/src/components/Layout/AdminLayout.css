@@ -1,0 +1,42 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f8; /* Light grey background for content area */
+}
+
+.admin-main-content {
+  flex-grow: 1;
+  /* overflow-y: auto; /* Allow content to scroll if it overflows */
+  /* padding: 20px; /* Default padding for content area */
+  /* transition: margin-left 0.3s ease, margin-right 0.3s ease; */
+}
+
+.admin-layout.ltr .admin-main-content {
+  margin-left: 260px; /* Same as sidebar width */
+}
+
+.admin-layout.rtl .admin-main-content {
+  margin-right: 260px; /* Same as sidebar width */
+}
+
+.admin-content-header {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  margin-bottom: 1.5rem; /* Spacing below header */
+}
+
+.admin-page-content {
+  /* The p-4 utility class from Bootstrap will handle padding here */
+}
+
+/* Responsive: If sidebar was to collapse, margin would need to change */
+/* @media (max-width: 768px) {
+  .admin-layout.ltr .admin-main-content {
+    margin-left: 0;
+  }
+  .admin-layout.rtl .admin-main-content {
+    margin-right: 0;
+  }
+} */

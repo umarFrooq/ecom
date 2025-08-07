@@ -1,0 +1,11 @@
+.main-content {
+  min-height: calc(100vh - 140px); /* Adjust 140px based on combined Navbar and Footer height */
+  /* This ensures footer stays at the bottom even on short pages */
+  /* May need further adjustment depending on exact navbar/footer heights and if they are fixed/static */
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  flex-grow: 1;
+}

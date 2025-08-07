@@ -1,0 +1,14 @@
+/* Basic App styling */
+.App {
+  text-align: center; /* Already centered by inline style in App.js for demo */
+}
+
+/* You can add more global styles here or import Bootstrap */
+
+/* Example of how to handle RTL for specific elements if needed,
+   though body.dir should handle most layout automatically with well-structured CSS.
+   [dir="rtl"] .some-element {
+     margin-right: 0;
+     margin-left: 10px; // Example: flip margin
+   }
+*/

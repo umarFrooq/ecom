@@ -1,0 +1,11 @@
+# robots.txt for Mafrushat Customer Site
+
+User-agent: *
+Allow: /
+
+# Disallow specific paths if any (examples, adjust as needed)
+# Disallow: /checkout/ # If you have a checkout process you don't want indexed directly
+# Disallow: /user/ # If there are user-specific non-public pages
+
+# Sitemap directive (uncomment and update URL when sitemap is available)
+# Sitemap: https://mafrushat-eurubat-almanar.com/sitemap.xml
